@@ -14,7 +14,7 @@ plt.scatter(x1, y1, color='green', marker='o', label='центр кластер�
 plt.axhline(0, color='black', linewidth=0.5)
 plt.axvline(0, color='black', linewidth=0.5)
 plt.grid(True, linestyle='--', linewidth=0.5)
-plt.legend()
+plt.legend(loc='upper right')
 plt.xlabel('X')
 plt.ylabel('Y')
 plt.title('точки и центры кластеров(первый график)')
@@ -42,7 +42,7 @@ def new_centers(clusters): #вычисляем новые центры
     return new_centroids
 
 def k_means(points, centers, max_iters=100, inaccuracy=0.001):
-    global number_of_iterations
+    number_of_iterations = 0
     for i in range(max_iters):
         clusters = cluster_distribution(points, centers)
         new_center = new_centers(clusters)
@@ -65,7 +65,7 @@ plt.scatter(x_final, y_final, color='black', marker='x', s=100, label='новы�
 plt.axhline(0, color='black', linewidth=0.5)
 plt.axvline(0, color='black', linewidth=0.5)
 plt.grid(True, linestyle='--', linewidth=0.5)
-plt.legend()
+plt.legend(loc='upper right')
 plt.xlabel('X')
 plt.ylabel('Y')
 plt.title('результат кластеризации (второй график)')
